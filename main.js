@@ -248,3 +248,11 @@ getCountryCode = (iso)=>{
     return country;
   });
 }
+
+const generateCountryOptionElement = (select=null,displayLocale="kr") => {
+  return getCountryCode(displayLocale).map(country=>{
+    return `<option id="country_${country.iso}" value="${country.code}">+${country.code} ${country.name}</option>`
+  }).join("\n");
+}
+
+console.log(generateCountryOptionElement());
