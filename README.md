@@ -27,3 +27,20 @@ getCountryCode(iso_string);
 ### 왜 필요한데?
 
 위에 데이터를 보면 전부 영어인걸 볼 수 있죠? 당신이 영어권 서비스를 지원할거라면 괜찮지만, 이 글을 보는 당신은 한국인일 거 뻔하니까, 번역을 위한 코드를 넣어준겁니다.
+
+
+### 난 소스코드 볼줄도 모르고 단지 국가코드를 만들고 싶은데요?
+
+```html
+<body>
+...
+<select id="countryNumber" name="countryNumber"></select>
+<script src="https://ungjinpark.github.io/getCountryCode/main.js"></script>
+<script>
+   const countryNumberSelect = document.getElementById("countryNumber");
+   generateCountryOptionElement(countryNumberSelect);
+</script>
+</body>
+```
+
+위 코드를 따라 쓰세요. 완전 기초적이고 기본적인 Javascript 지식은 필요합니다.
