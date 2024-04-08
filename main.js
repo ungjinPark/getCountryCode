@@ -249,10 +249,14 @@ getCountryCode = (iso)=>{
   });
 }
 
-const generateCountryOptionElement = (select=null,displayLocale="kr") => {
-  return getCountryCode(displayLocale).map(country=>{
+/** 
+ * @param {HTMLSelectElement} select
+ * @param {string} displayLocale
+ */
+const generateCountryOptionElement = (select,displayLocale="kr") => {
+  
+  const options = getCountryCode(displayLocale).map(country=>{
     return `<option id="country_${country.iso}" value="${country.code}">+${country.code} ${country.name}</option>`
   }).join("\n");
+  select.insertAdjacentHTML("afterbegin",options);
 }
-
-console.log(generateCountryOptionElement());
